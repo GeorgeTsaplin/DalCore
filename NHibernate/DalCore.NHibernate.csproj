@@ -8,7 +8,7 @@
     <Company>ITB</Company>
     <Product>DalCore.NHibernate</Product>
     <Authors>GeorgeTsaplin</Authors>
-    <Copyright>ITB 2020</Copyright>
+    <Copyright>ITB 2021</Copyright>
     <RepositoryType>git</RepositoryType>
     <AssemblyVersion>3.0.2.0</AssemblyVersion>
     <FileVersion>3.0.2.0</FileVersion>
@@ -16,9 +16,9 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>orm dal nhibernate</PackageTags>
     <PackageReleaseNotes></PackageReleaseNotes>
-    <PackageProjectUrl>https://tfs.cti.ru/IPCC/internal_utilities/_git/lib_dalCore</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/GeorgeTsaplin/DalCore</PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <RepositoryUrl>https://tfs.cti.ru/IPCC/internal_utilities/_git/lib_dalCore</RepositoryUrl>
+    <RepositoryUrl>https://github.com/GeorgeTsaplin/DalCore</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
