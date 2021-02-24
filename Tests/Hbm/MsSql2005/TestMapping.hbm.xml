@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Itb.DalCore.NHibernate" namespace="Itb.DalCore.NHibernate.Tests">
+
+	<class name="Object" table="sysobjects">
+		<id name="Id" column="id" type="int" />
+		<property name="Name" column ="name" type="String" not-null="true"/>
+	</class>
+
+	<!-- Обработка строки сообщения об ошибке -->
+	<!--<sql-query name="ProcessErrorMessage" read-only="true">
+		<query-param name="Message" type="string"/>
+		<return-scalar column="Result" type="int"/>
+		EXEC dbo.pProcessErrorMessage @Message = :Message ;
+		SELECT @@ERROR;
+	</sql-query>-->
+	<sql-query name="ProcessErrorMessage" read-only="true">
+		<return-scalar column="Result" type="int"/>
+		EXEC dbo.pProcessErrorMessage @Message = ? ;
+		SELECT @@ERROR;
+	</sql-query>
+	<sql-query name="MissingObject" read-only="true">
+		<return-scalar column="Result" type="int"/>
+		EXEC dbo.__some_missing_object @Message = ? ;
+		SELECT @@ERROR;
+	</sql-query>
+	
+</hibernate-mapping>

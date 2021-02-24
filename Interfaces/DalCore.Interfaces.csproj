@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Itb.DalCore.Interfaces</AssemblyName>
+    <RootNamespace>Itb.DalCore</RootNamespace>
+    <Description>Data access layer core interfaces</Description>
+    <Company>ITB</Company>
+    <Product>DalCore.Interfaces</Product>
+    <Authors>GeorgeTsaplin</Authors>
+    <Copyright>ITB 2020</Copyright>
+    <RepositoryType>git</RepositoryType>
+    <AssemblyVersion>3.0.2.0</AssemblyVersion>
+    <FileVersion>3.0.2.0</FileVersion>
+    <Version>3.0.2</Version>
+    <PackageTags>orm dal</PackageTags>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageProjectUrl>https://tfs.cti.ru/IPCC/internal_utilities/_git/lib_dalCore</PackageProjectUrl>
+    <RepositoryUrl>https://tfs.cti.ru/IPCC/internal_utilities/_git/lib_dalCore</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>.\Itb.DalCore.Interfaces.xml</DocumentationFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Exceptions\IDataSourceExceptionTranslator.cs" />
+  </ItemGroup>
+
+</Project>

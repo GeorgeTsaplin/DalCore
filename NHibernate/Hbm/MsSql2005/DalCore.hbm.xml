@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="DataAccessLayerCore" namespace="Itb.DataAccessLayerCore">
+	<!-- Обработка строки сообщения об ошибке -->
+	<!--
+	<sql-query name="ProcessErrorMessage" read-only="true">
+		<query-param name="Message" type="string"/>
+		<return-scalar column="Result" type="int"/>
+		EXEC dbo.pProcessErrorMessage @Message = :Message ;
+		SELECT @@ERROR;
+	</sql-query>
+	-->
+	<!-- Действия после соединиения -->
+	<sql-query name="AfterConnect">
+		<return-scalar column="cookie" type="System.Byte[]"/>
+		-- действия после соединиения
+		SET NOCOUNT ON;
+
+		DECLARE @RoleName sysname, @psw nvarchar(4000), @cookie varbinary(8000);
+
+		SELECT TOP 1 @RoleName = RoleName, @psw = master.dbo.pfn_DecryptString(Password)
+		FROM vAppRole{{CC,,}}00;
+
+		EXEC sp_setapprole @RoleName, @psw
+		, @fCreateCookie = true, @cookie = @cookie OUTPUT;
+
+		SELECT @cookie AS cookie;
+		/*select cast(null as varbinary(8000)) as cookie;*/
+		-- !!! (Цаплин Г.Л.) Необходимо для корректной работы NHibernate (была выявлена ошибка удаления записей при NOCOUNT ON)
+		SET NOCOUNT OFF;
+	</sql-query>
+
+	<!-- Действия перед отсоединением -->
+	<sql-query name="BeforeDisconnect">
+		<return-scalar column="res" type="int"/>
+		<!--<query-param name="cookie" type="System.byte[]"/>-->
+		-- действия перед отсоединением
+		EXEC sp_unsetapprole {{cookie}}
+		SELECT 1 AS res;
+	</sql-query>
+
+	<sql-query name="GetDate" read-only="true">
+		<return-scalar column="Date" type="Timestamp"/>
+		SELECT GETDATE() AS Date
+	</sql-query>
+
+</hibernate-mapping>

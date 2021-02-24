@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Itb.DalCore.NHibernate</AssemblyName>
+    <RootNamespace>Itb.DalCore.NHibernate</RootNamespace>
+    <Description>Data access layer core based on NHibernate</Description>
+    <Company>ITB</Company>
+    <Product>DalCore.NHibernate</Product>
+    <Authors>GeorgeTsaplin</Authors>
+    <Copyright>ITB 2020</Copyright>
+    <RepositoryType>git</RepositoryType>
+    <AssemblyVersion>3.0.2.0</AssemblyVersion>
+    <FileVersion>3.0.2.0</FileVersion>
+    <Version>3.0.2</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageTags>orm dal nhibernate</PackageTags>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageProjectUrl>https://tfs.cti.ru/IPCC/internal_utilities/_git/lib_dalCore</PackageProjectUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <RepositoryUrl>https://tfs.cti.ru/IPCC/internal_utilities/_git/lib_dalCore</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>.\Itb.DalCore.NHibernate.xml</DocumentationFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="UnitOfWork\NHibernateHelper.cs" />
+    <Compile Remove="ValidateInterceptor.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
+    <PackageReference Include="NHibernate" Version="5.2.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Interfaces\DalCore.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
