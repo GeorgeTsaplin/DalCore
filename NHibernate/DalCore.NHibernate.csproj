@@ -15,7 +15,7 @@
     <Version>3.1.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>orm dal nhibernate</PackageTags>
-    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageReleaseNotes>Added Evict methods to ISessionProvider</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/GeorgeTsaplin/DalCore</PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
     <RepositoryUrl>https://github.com/GeorgeTsaplin/DalCore</RepositoryUrl>
