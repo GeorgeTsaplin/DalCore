@@ -30,6 +30,7 @@ namespace Itb.DalCore.NHibernate
         /// <param name="persistentClass"></param>
         /// <param name="id"></param>
         void Evict(System.Type persistentClass, object id);
+
         /// <summary>
         /// Evict all entries from the process-level cache. This method occurs outside of
         /// any transaction; it performs an immediate "hard" remove, so does not respect
@@ -128,6 +129,5 @@ namespace Itb.DalCore.NHibernate
         /// Evict any query result sets cached in the named query cache region.
         /// </summary>
         Task EvictQueriesAsync(string cacheRegion, CancellationToken cancellationToken = default);
-
     }
 }
