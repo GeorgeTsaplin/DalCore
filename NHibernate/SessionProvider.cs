@@ -3,6 +3,8 @@ using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Context;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace Itb.DalCore.NHibernate
 {
@@ -153,6 +155,54 @@ Implicitly session usage not allowed now. Please open session explicitly through
 				this._sessionFactory.Dispose();
 			}
 		}
+
+		void ISessionProvider.Evict(Type persistentClass, object id)
+			=> this.SessionFactory.Evict(persistentClass, id);
+
+		void ISessionProvider.Evict(Type persistentClass)
+			=> this.SessionFactory.Evict(persistentClass);
+
+		Task ISessionProvider.EvictAsync(Type persistentClass, CancellationToken cancellationToken)
+			=> this.SessionFactory.EvictAsync(persistentClass, cancellationToken);
+
+		Task ISessionProvider.EvictAsync(Type persistentClass, object id, CancellationToken cancellationToken)
+			=> this.SessionFactory.EvictAsync(persistentClass, id, cancellationToken);
+
+		void ISessionProvider.EvictCollection(string roleName, object id)
+			=> this.SessionFactory.EvictCollection(roleName, id);
+
+		void ISessionProvider.EvictCollection(string roleName)
+			=> this.SessionFactory.EvictCollection(roleName);
+
+		Task ISessionProvider.EvictCollectionAsync(string roleName, CancellationToken cancellationToken)
+			=> this.SessionFactory.EvictCollectionAsync(roleName, cancellationToken);
+
+		Task ISessionProvider.EvictCollectionAsync(string roleName, object id, CancellationToken cancellationToken)
+			=> this.SessionFactory.EvictCollectionAsync(roleName, id, cancellationToken);
+
+		void ISessionProvider.EvictEntity(string entityName, object id)
+			=> this.SessionFactory.EvictEntity(entityName, id);
+
+		void ISessionProvider.EvictEntity(string entityName)
+			=> this.SessionFactory.EvictEntity(entityName);
+
+		Task ISessionProvider.EvictEntityAsync(string entityName, CancellationToken cancellationToken)
+			=> this.SessionFactory.EvictEntityAsync(entityName, cancellationToken);
+
+		Task ISessionProvider.EvictEntityAsync(string entityName, object id, CancellationToken cancellationToken)
+			=> this.SessionFactory.EvictEntityAsync(entityName, id, cancellationToken);
+
+		void ISessionProvider.EvictQueries(string cacheRegion)
+			=> this.SessionFactory.EvictQueries(cacheRegion);
+
+		void ISessionProvider.EvictQueries()
+			=> this.SessionFactory.EvictQueries();
+
+		Task ISessionProvider.EvictQueriesAsync(CancellationToken cancellationToken)
+			=> this.SessionFactory.EvictQueriesAsync(cancellationToken);
+
+		Task ISessionProvider.EvictQueriesAsync(string cacheRegion, CancellationToken cancellationToken)
+			=> this.SessionFactory.EvictQueriesAsync(cacheRegion, cancellationToken);
 
 #pragma warning restore 1591
 	}

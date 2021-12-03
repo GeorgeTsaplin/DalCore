@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DalCore.Interfaces", "Interfaces\DalCore.Interfaces.csproj", "{35D8189D-B6A4-405A-90B0-A1B2C8491CBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DalCore.Interfaces", "Interfaces\DalCore.Interfaces.csproj", "{35D8189D-B6A4-405A-90B0-A1B2C8491CBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DalCore.NHibernate", "NHibernate\DalCore.NHibernate.csproj", "{D625777C-FF67-44CD-880C-97A606B6DC7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DalCore.NHibernate", "NHibernate\DalCore.NHibernate.csproj", "{D625777C-FF67-44CD-880C-97A606B6DC7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
