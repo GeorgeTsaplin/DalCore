@@ -113,11 +113,11 @@ namespace Itb.DalCore.NHibernate.UnitOfWork
                 }
                 catch (TransactionException)
                 {
-                    // HACK: transaction may be rolled back on DBMS side
+                    // HACK: transaction may be rolled back on DBMS side, so do nothing
                 }
                 catch (ObjectDisposedException)
                 {
-                    // HACK: transaction can be disposed right now
+                    // HACK: transaction can be already disposed, so do nothing
                 }
             }
 
