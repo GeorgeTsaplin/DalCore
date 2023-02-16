@@ -10,12 +10,13 @@
     <Authors>GeorgeTsaplin</Authors>
     <Copyright>ITB 2021</Copyright>
     <RepositoryType>git</RepositoryType>
-    <AssemblyVersion>3.1.1.0</AssemblyVersion>
-    <FileVersion>3.1.1.0</FileVersion>
-    <Version>3.1.1</Version>
+    <AssemblyVersion>3.1.2.0</AssemblyVersion>
+    <FileVersion>3.1.2.0</FileVersion>
+    <Version>3.1.2</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>orm dal nhibernate</PackageTags>
-    <PackageReleaseNotes>Added Evict methods to ISessionProvider</PackageReleaseNotes>
+    <PackageReleaseNotes>- Added Evict methods to ISessionProvider
+- Fixed "ObjectDisposedException" at UnitOfWork Rollback()</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/GeorgeTsaplin/DalCore</PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
     <RepositoryUrl>https://github.com/GeorgeTsaplin/DalCore</RepositoryUrl>
