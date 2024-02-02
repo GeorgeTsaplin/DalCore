@@ -8,7 +8,7 @@
     <Company>ITB</Company>
     <Product>DalCore.NHibernate</Product>
     <Authors>GeorgeTsaplin</Authors>
-    <Copyright>ITB 2021</Copyright>
+    <Copyright>ITB 2024</Copyright>
     <RepositoryType>git</RepositoryType>
     <AssemblyVersion>5.3.0.0</AssemblyVersion>
     <FileVersion>5.3.0.0</FileVersion>
