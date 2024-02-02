@@ -8,15 +8,14 @@
     <Company>ITB</Company>
     <Product>DalCore.NHibernate</Product>
     <Authors>GeorgeTsaplin</Authors>
-    <Copyright>ITB 2021</Copyright>
+    <Copyright>ITB 2024</Copyright>
     <RepositoryType>git</RepositoryType>
-    <AssemblyVersion>3.1.2.0</AssemblyVersion>
-    <FileVersion>3.1.2.0</FileVersion>
-    <Version>3.1.2</Version>
+    <AssemblyVersion>5.3.0.0</AssemblyVersion>
+    <FileVersion>5.3.0.0</FileVersion>
+    <Version>5.3.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>orm dal nhibernate</PackageTags>
-    <PackageReleaseNotes>- Added Evict methods to ISessionProvider
-- Fixed "ObjectDisposedException" at UnitOfWork Rollback()</PackageReleaseNotes>
+    <PackageReleaseNotes>Update NHibernate to 5.3.20</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/GeorgeTsaplin/DalCore</PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
     <RepositoryUrl>https://github.com/GeorgeTsaplin/DalCore</RepositoryUrl>
@@ -33,8 +32,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
-    <PackageReference Include="NHibernate" Version="5.2.7" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.4" />
+    <PackageReference Include="NHibernate" Version="5.3.20" />
   </ItemGroup>
 
   <ItemGroup>
