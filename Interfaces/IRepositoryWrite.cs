@@ -19,6 +19,7 @@ namespace Itb.DalCore
 		/// </summary>
 		/// <param name="entity">entity for saving</param>
         /// <param name="cancellationToken">cancellation token</param>
+        /// <remarks>Looks at the identifier and decides what is necessary to do: insert or update</remarks>
         /// <returns></returns>
 		Task SaveAsync(T entity, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -57,5 +58,19 @@ namespace Itb.DalCore
         /// <param name="cancellationToken">cancellation token</param>
         /// <returns></returns>
         Task LockAsync(T entity, LockMode lockMode, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary> Inserts new entity async
+		/// </summary>
+		/// <param name="entity">entity to insert</param>
+        /// <param name="cancellationToken">cancellation token</param>
+        /// <returns></returns>
+		Task InsertAsync(T entity, CancellationToken cancellationToken = default);
+
+        /// <summary> Updates an entity async
+		/// </summary>
+		/// <param name="entity">entity to update</param>
+        /// <param name="cancellationToken">cancellation token</param>
+        /// <returns></returns>
+		Task UpdateAsync(T entity, CancellationToken cancellationToken = default);
     }
 }

@@ -312,6 +312,12 @@ namespace Itb.DalCore.NHibernate
         public virtual async Task SaveAsync(T entity, CancellationToken cancellationToken = default(CancellationToken))
         => await this.Session.SaveOrUpdateAsync(entity, cancellationToken);
 
+        public virtual async Task InsertAsync(T entity, CancellationToken cancellationToken = default(CancellationToken))
+            => await this.Session.SaveAsync(entity, cancellationToken);
+
+        public virtual async Task UpdateAsync(T entity, CancellationToken cancellationToken = default(CancellationToken))
+            => await this.Session.UpdateAsync(entity, cancellationToken);
+
         public virtual void Flush() {
             this.Session.Flush();
         }
