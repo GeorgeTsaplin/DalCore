@@ -1,22 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
     <AssemblyName>Itb.DalCore.NHibernate</AssemblyName>
     <RootNamespace>Itb.DalCore.NHibernate</RootNamespace>
     <Description>Data access layer core based on NHibernate</Description>
     <Company>ITB</Company>
     <Product>DalCore.NHibernate</Product>
     <Authors>GeorgeTsaplin</Authors>
-    <Copyright>ITB 2021</Copyright>
+    <Copyright>ITB 2025</Copyright>
     <RepositoryType>git</RepositoryType>
-    <AssemblyVersion>3.1.2.0</AssemblyVersion>
-    <FileVersion>3.1.2.0</FileVersion>
-    <Version>3.1.2</Version>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>5.4.1.0</AssemblyVersion>
+    <FileVersion>5.4.1.0</FileVersion>
+    <VersionPrefix>5.4.1</VersionPrefix>
+    <VersionSuffix></VersionSuffix>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageTags>orm dal nhibernate</PackageTags>
-    <PackageReleaseNotes>- Added Evict methods to ISessionProvider
-- Fixed "ObjectDisposedException" at UnitOfWork Rollback()</PackageReleaseNotes>
+    <PackageReleaseNotes>- Upgrade NHibernate to 5.4.9
+- Added BaseRepository InsertAsync and UpdateAsync methods</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/GeorgeTsaplin/DalCore</PackageProjectUrl>
     <PackageLicenseUrl></PackageLicenseUrl>
     <RepositoryUrl>https://github.com/GeorgeTsaplin/DalCore</RepositoryUrl>
@@ -33,8 +34,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.1.1" />
-    <PackageReference Include="NHibernate" Version="5.2.7" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.4" />
+    <PackageReference Include="NHibernate" Version="5.4.9" />
   </ItemGroup>
 
   <ItemGroup>
